@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Task2.Models.Role>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="mb-2 text-right w-2/4">
+    <button class="select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            type="button">
+        <a asp-action="Create" class="btn btn-success">Create New</a>
+    </button>
+</div>
+<div class="relative flex flex-col w-2/4 text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+    <table class=" text-left table-auto min-w-max">     
+        <thead>
+            <tr>
+                <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                    <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                        @Html.DisplayNameFor(model => model.RoleName)
+                    </p>
+                </th>
+                <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                    <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70"></p>
+                </th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="p-4 border-b border-blue-gray-50">
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                            @Html.DisplayFor(modelItem => item.RoleName)
+                        </p>
+                    </td>
+                    <td class="p-4 border-b border-blue-gray-50">
+                        <a asp-action="Edit" asp-route-id="@item.RoleId" class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                           type="button">
+                            <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                        <button asp-action="Delete" asp-route-id="@item.RoleId" onclick="deleteItem(this)"
+                        class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                           type="button">
+                            <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

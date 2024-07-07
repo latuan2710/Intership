@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "fontawesome-iconpicker@3.2.0",
+      "destination": "wwwroot/lib/fontawesome-iconpicker/",
+      "files": [
+        "js/fontawesome-iconpicker.min.js",
+        "css/fontawesome-iconpicker.min.css",
+        "css/fontawesome-iconpicker.css",
+        "js/fontawesome-iconpicker.js"
+      ]
+    },
+    {
+      "library": "sweetalert2@11.12.1",
+      "destination": "wwwroot/lib/sweetalert2/"
+    }
+  ]
+}
